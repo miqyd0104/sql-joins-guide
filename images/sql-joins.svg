@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+<title id="title">Four SQL JOINs: which rows are kept?</title>
+<desc id="desc">Asha has orders 101 and 102. Ben has order 103. Cara has no order. Order 104 has no customer. INNER returns three matched rows; LEFT also keeps Cara; RIGHT also keeps order 104; FULL keeps both unmatched rows.</desc>
+<rect width="1200" height="1200" fill="#f1f5f9"/>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#102a43}.heading{font-size:30px;font-weight:700}.sub{font-size:19px}.card{font-size:24px;font-weight:700}.cell{font-size:19px}.label{font-size:17px;font-weight:700}</style>
+<text x="40" y="50" class="heading">SQL JOINs: which rows are kept?</text>
+<text x="40" y="84" class="sub">Match Customers (left) to Orders (right) on CustomerID.</text>
+<text x="40" y="120" class="sub">Customers: 1 Asha · 2 Ben · 3 Cara</text>
+<text x="40" y="151" class="sub">Orders: 101 → 1 · 102 → 1 · 103 → 2 · 104 → NULL (unassigned)</text>
+<rect x="40" y="220" width="540" height="380" rx="14" fill="white" stroke="#cbd5e1"/>
+<text x="60" y="256" class="card">INNER JOIN</text>
+<text x="60" y="285" class="sub">Keep matching pairs only</text>
+<text x="60" y="318" class="label">CustomerID</text>
+<text x="205" y="318" class="label">CustomerName</text>
+<text x="430" y="318" class="label">OrderID</text>
+<rect x="52" y="350" width="516" height="40" rx="3" fill="#dbeafe"/>
+<text x="60" y="377" class="cell">1</text>
+<text x="205" y="377" class="cell">Asha</text>
+<text x="430" y="377" class="cell">101</text>
+<rect x="52" y="394" width="516" height="40" rx="3" fill="#dbeafe"/>
+<text x="60" y="421" class="cell">1</text>
+<text x="205" y="421" class="cell">Asha</text>
+<text x="430" y="421" class="cell">102</text>
+<rect x="52" y="438" width="516" height="40" rx="3" fill="#dbeafe"/>
+<text x="60" y="465" class="cell">2</text>
+<text x="205" y="465" class="cell">Ben</text>
+<text x="430" y="465" class="cell">103</text>
+<rect x="620" y="220" width="540" height="380" rx="14" fill="white" stroke="#cbd5e1"/>
+<text x="640" y="256" class="card">LEFT JOIN</text>
+<text x="640" y="285" class="sub">Keep every customer</text>
+<text x="640" y="318" class="label">CustomerID</text>
+<text x="785" y="318" class="label">CustomerName</text>
+<text x="1010" y="318" class="label">OrderID</text>
+<rect x="632" y="350" width="516" height="40" rx="3" fill="#dbeafe"/>
+<text x="640" y="377" class="cell">1</text>
+<text x="785" y="377" class="cell">Asha</text>
+<text x="1010" y="377" class="cell">101</text>
+<rect x="632" y="394" width="516" height="40" rx="3" fill="#dbeafe"/>
+<text x="640" y="421" class="cell">1</text>
+<text x="785" y="421" class="cell">Asha</text>
+<text x="1010" y="421" class="cell">102</text>
+<rect x="632" y="438" width="516" height="40" rx="3" fill="#dbeafe"/>
+<text x="640" y="465" class="cell">2</text>
+<text x="785" y="465" class="cell">Ben</text>
+<text x="1010" y="465" class="cell">103</text>
+<rect x="632" y="482" width="516" height="40" rx="3" fill="#fef3c7"/>
+<text x="640" y="509" class="cell">3</text>
+<text x="785" y="509" class="cell">Cara</text>
+<text x="1010" y="509" class="cell">NULL</text>
+<rect x="40" y="630" width="540" height="380" rx="14" fill="white" stroke="#cbd5e1"/>
+<text x="60" y="666" class="card">RIGHT JOIN</text>
+<text x="60" y="695" class="sub">Keep every order</text>
+<text x="60" y="728" class="label">CustomerID</text>
+<text x="205" y="728" class="label">CustomerName</text>
+<text x="430" y="728" class="label">OrderID</text>
+<rect x="52" y="760" width="516" height="40" rx="3" fill="#dbeafe"/>
+<text x="60" y="787" class="cell">1</text>
+<text x="205" y="787" class="cell">Asha</text>
+<text x="430" y="787" class="cell">101</text>
+<rect x="52" y="804" width="516" height="40" rx="3" fill="#dbeafe"/>
+<text x="60" y="831" class="cell">1</text>
+<text x="205" y="831" class="cell">Asha</text>
+<text x="430" y="831" class="cell">102</text>
+<rect x="52" y="848" width="516" height="40" rx="3" fill="#dbeafe"/>
+<text x="60" y="875" class="cell">2</text>
+<text x="205" y="875" class="cell">Ben</text>
+<text x="430" y="875" class="cell">103</text>
+<rect x="52" y="892" width="516" height="40" rx="3" fill="#fef3c7"/>
+<text x="60" y="919" class="cell">NULL</text>
+<text x="205" y="919" class="cell">NULL</text>
+<text x="430" y="919" class="cell">104</text>
+<rect x="620" y="630" width="540" height="380" rx="14" fill="white" stroke="#cbd5e1"/>
+<text x="640" y="666" class="card">FULL JOIN</text>
+<text x="640" y="695" class="sub">Keep both sides</text>
+<text x="640" y="728" class="label">CustomerID</text>
+<text x="785" y="728" class="label">CustomerName</text>
+<text x="1010" y="728" class="label">OrderID</text>
+<rect x="632" y="760" width="516" height="40" rx="3" fill="#dbeafe"/>
+<text x="640" y="787" class="cell">1</text>
+<text x="785" y="787" class="cell">Asha</text>
+<text x="1010" y="787" class="cell">101</text>
+<rect x="632" y="804" width="516" height="40" rx="3" fill="#dbeafe"/>
+<text x="640" y="831" class="cell">1</text>
+<text x="785" y="831" class="cell">Asha</text>
+<text x="1010" y="831" class="cell">102</text>
+<rect x="632" y="848" width="516" height="40" rx="3" fill="#dbeafe"/>
+<text x="640" y="875" class="cell">2</text>
+<text x="785" y="875" class="cell">Ben</text>
+<text x="1010" y="875" class="cell">103</text>
+<rect x="632" y="892" width="516" height="40" rx="3" fill="#fef3c7"/>
+<text x="640" y="919" class="cell">3</text>
+<text x="785" y="919" class="cell">Cara</text>
+<text x="1010" y="919" class="cell">NULL</text>
+<rect x="632" y="936" width="516" height="40" rx="3" fill="#fef3c7"/>
+<text x="640" y="963" class="cell">NULL</text>
+<text x="785" y="963" class="cell">NULL</text>
+<text x="1010" y="963" class="cell">104</text>
+<rect x="40" y="1060" width="20" height="20" fill="#dbeafe"/>
+<text x="70" y="1077" class="cell">Matched pair</text>
+<rect x="260" y="1060" width="20" height="20" fill="#fef3c7"/>
+<text x="290" y="1077" class="cell">Unmatched row: missing side becomes NULL</text>
+<text x="40" y="1135" class="sub">Asha appears twice: one result row for each matching order.</text>
+</svg>
